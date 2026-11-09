@@ -681,18 +681,22 @@ function render() {
   const { session, unlocked } = state;
   const header = h(
     'header',
-    {},
+    { className: 'topbar' },
     h(
       'div',
       { className: 'brand' },
       h('img', { src: logoUrl, alt: '' }),
-      h('div', {}, h('h1', {}, 'Eternal Vault'), h('small', {}, 'Offline recovery')),
+      h('h1', { className: 'wordmark' }, 'Eternal Vault'),
+      h('span', { className: 'pill' }, 'Offline recovery'),
     ),
     h(
-      'div',
-      { className: 'notice' },
+      'span',
+      {
+        className: 'secure',
+        title: 'This page makes no network requests. Nothing you enter leaves this computer.',
+      },
       h('span', { className: 'dot' }),
-      'Works offline. Nothing you enter leaves this computer.',
+      'Private · runs offline',
     ),
   );
   const content = !session
