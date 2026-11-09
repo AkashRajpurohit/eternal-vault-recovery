@@ -23,6 +23,7 @@ jobs:
       - run: pnpm test
       - run: pnpm build:tool
       - uses: actions/attest-build-provenance@v4
+        if: ${{ !github.event.repository.private }}
         with:
           subject-path: dist-tool/recover.html
       - name: Publish release
