@@ -1,0 +1,10 @@
+{
+  "passphrase": "test vector passphrase only never use this for a real vault ok",
+  "codes": {
+    "mom": "abbey ablaze about absorb abyss academy",
+    "raj": "abduct aboard above absurd abort abstract",
+    "priya": "abducts ability abnormal abrasive absent abbey"
+  },
+  "masterKeyHex": "336912bc88ecd3515b33160c6626fad4125f25a4e2f861f703ccddff8f3e9fc0",
+  "documentText": "This is a test document inside the v1 test vector."
+}
