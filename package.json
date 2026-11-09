@@ -1,0 +1,67 @@
+{
+  "name": "@eternal-vault/recovery",
+  "version": "1.0.0",
+  "description": "Open a vault from an Eternal Vault Offline Recovery Bundle, entirely offline. Bundle format v1, reference implementation and recovery tool.",
+  "license": "MIT",
+  "author": {
+    "name": "Akash Rajpurohit",
+    "email": "me@akashrajpurohit.com",
+    "url": "https://akashrajpurohit.com"
+  },
+  "homepage": "https://eternalvault.app/continuity",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkashRajpurohit/eternal-vault-recovery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AkashRajpurohit/eternal-vault-recovery/issues"
+  },
+  "keywords": [
+    "eternal-vault",
+    "digital-legacy",
+    "shamir-secret-sharing",
+    "offline",
+    "recovery",
+    "encryption"
+  ],
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "FORMAT.md", "LICENSE"],
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "build": "tsup",
+    "build:tool": "vite build && node scripts/hash-tool.mjs",
+    "dev:tool": "vite",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
+  },
+  "dependencies": {
+    "@noble/ciphers": "^2.4.0",
+    "@noble/hashes": "^2.0.1",
+    "@stablelib/gf256": "^2.0.1",
+    "client-zip": "^2.5.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.18.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vite-plugin-singlefile": "^2.3.4",
+    "vitest": "^5.1.0"
+  }
+}
