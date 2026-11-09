@@ -22,6 +22,13 @@ Out of scope:
 - Contacts opening a bundle early with enough valid codes. That is the documented tradeoff of offline recovery.
 - Attacks that require a compromised device or browser.
 
+## Security model
+
+- A bundle plus enough access codes (or the owner's passphrase) opens the vault immediately. Offline there is no waiting period; that is the deliberate tradeoff of offline recovery.
+- Without enough codes the bundle is unreadable. Document names, file names and contact details are encrypted too.
+- Each guess at a code or passphrase costs a full scrypt evaluation (N = 2^18), which makes offline guessing slow.
+- `recover.html` makes no network requests. Its Content Security Policy blocks them.
+
 ## Supported versions
 
 Every release must keep opening every bundle format version it has ever supported. Security fixes are released as new versions; the latest release is the supported one.
